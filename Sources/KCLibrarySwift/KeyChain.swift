@@ -11,6 +11,8 @@ import KeychainSwift
 
 public struct KeyChainKC {
     
+    public init() {}
+    
     @discardableResult public static func saveKC(key: String, value: String) -> Bool {
         if let data = value.data(using: .utf8) {
             let keychain = KeychainSwift()
@@ -28,8 +30,6 @@ public struct KeyChainKC {
             return ""
         }
     }
-    
-    
     
     @discardableResult public static func deleteKC(key: String) -> Bool {
         let keychain = KeychainSwift()
